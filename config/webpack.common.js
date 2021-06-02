@@ -23,7 +23,8 @@ function getEntry(globPath) {
     )
 
   })
-
+  console.log(entryMap)
+  
   return entryMap
 }
 
@@ -33,16 +34,20 @@ module.exports = {
   entry: entries,
   output: {
     path: path.resolve(__dirname, `../build`),
-    publicPath: '/demo/',
+    // publicPath: '',
     filename: 'static/js/[name].[contenthash:8].js'
   },
   module: {
     rules: [
       {
         test: /\.js$/,
-        use: ['babel-loader'],
-        include: path.resolve(__dirname, 'src'),
-        exclude: /node_modules/
+        exclude: /(node_modules|bower_components)/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env', '@babel/preset-react']
+          }
+        }
       }
     ]
   },

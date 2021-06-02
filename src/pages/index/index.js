@@ -1,4 +1,16 @@
-import test from '../../utils'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './index.css'
 
-console.log('test', test)
-console.log(123)
+function Index() {
+
+  return (
+    <div>
+      <div className="test">index</div>
+    </div>
+  )
+}
+
+ReactDOM.render(<Index/>, document.getElementById("app"))
+
+export default Index
