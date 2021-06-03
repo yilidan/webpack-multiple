@@ -7,11 +7,12 @@ const HtmlWebpackPlugins = []
 function getEntry(globPath) {
   const files = glob.sync(globPath)
 
+  console.log(files)
   const entryMap = {}
   files.forEach(entry => {
     const pathArr = entry.split('/')
     const fileName = pathArr[pathArr.length - 1]
-    entryMap[fileName] = ['@babel/polyfill', entry]
+    entryMap[fileName] = [entry]
 
     HtmlWebpackPlugins.push(
       new HtmlWebpackPlugin({
@@ -49,6 +50,15 @@ module.exports = {
           }
         }
       }
+      // {
+      //   test: /\.css$/,
+      //   // loader执行顺序从后往前
+      //   use: ['style-loader', 'css-loader', 'postcss-loader']
+      // },
+      // {
+      //   test: /\.less$/,
+      //   use: ['style-loader', 'css-loader', 'less-loader']
+      // }
     ]
   },
   plugins: [

@@ -9,7 +9,7 @@ module.exports = merge(webpackCommonConf, {
       {
         test: /\.css$/,
         // loader执行顺序从后往前
-        use: ['style-loader', 'css-loader']
+        use: ['style-loader', 'css-loader', 'postcss-loader']
       },
       {
         test: /\.less$/,
