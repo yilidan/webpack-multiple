@@ -6,6 +6,11 @@ module.exports = merge(webpackCommonConf, {
   mode: 'development',
   module: {
     rules: [
+      // 直接引入图片
+      {
+        test: /\.(png|jpg|jpeg|gif)$/,
+        use: 'file-loader'
+      },
       {
         test: /\.css$/,
         // loader执行顺序从后往前
