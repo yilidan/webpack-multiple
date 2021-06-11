@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import test from '../../utils'
+import {test, sum} from '../../utils'
 import './index.less'
 
 function Other() {

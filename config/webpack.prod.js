@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const { merge } = require('webpack-merge')
 const webpackCommonConf = require('./webpack.common')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
@@ -52,14 +53,17 @@ module.exports = merge(webpackCommonConf, {
     new CleanWebpackPlugin(),
     // 抽离css文件
     new MiniCssExtractPlugin({
-      filename: 'css/main.[contenthash:8].css'
-    })
+      filename: 'css/[name].[contenthash:8].css'
+    }),
+    // 忽略 moment 下的 /locale 目录
+		new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
   optimization: {
     // 压缩css
     minimizer: [
       // webpack5自带 terser-webpack-plugin
       new TerserWebpackPlugin({
+        // 是否将注释剥离到单独的文件中
         extractComments: false
       }), 
       new OptimizeCssAssetsPlugin({})

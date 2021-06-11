@@ -1,3 +1,5 @@
-const test = 'abc'
+export const test = 'abc'
 
-export default test
+export function sum() {
+  return 1+2
+}

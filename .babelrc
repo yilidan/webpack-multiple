@@ -10,5 +10,18 @@
     ],
     ["@babel/preset-react"]
   ],
-  "plugins": []
+  "plugins": [
+    // 解决babel-polyfill污染全局环境的缺点
+    // 变量重命名，不污染全局环境
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "absoluteRuntime": false,
+				"corejs": 3,
+				"helpers": true,
+				"regenerator": true,
+				"useESModules": false
+      }
+    ]
+  ]
 }
