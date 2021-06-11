@@ -2,8 +2,12 @@
 
 #### webpack5构建多页面，使用React框架
 
-## `npm install`
+#### 构建方式
 
-## `npm start`
+```
+npm install
 
-## `npm run build`
+npm start
+
+npm run build
+```
