@@ -1,1 +1,2 @@
-#### webpack搭建多页面项目 使用React框架
+# webpack5-multiple
+#### webpack5构建多页面，使用React框架
