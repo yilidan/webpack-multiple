@@ -12,6 +12,7 @@ function getEntry(globPath) {
   files.forEach(entry => {
     const pathArr = entry.split('/')
     const fileName = pathArr[pathArr.length - 1]
+    // entryMap[fileName] = ['@babel/polyfill', entry]
     entryMap[fileName] = [entry]
 
     HtmlWebpackPlugins.push(

@@ -26,7 +26,7 @@ module.exports = merge(webpackCommonConf, {
     port: 8080,
     progress: true,  // 显示打包的进度条
     contentBase: path.resolve(__dirname, '../build'),  // 根目录
-    open: false,  // 自动打开浏览器
+    open: true,  // 自动打开浏览器
     compress: true,  // 启动 gzip 压缩
 
     // 设置代理
